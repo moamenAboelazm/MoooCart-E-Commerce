@@ -8,7 +8,6 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Configure Serilog for logging and error tracking
 Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.Console()
@@ -18,7 +17,6 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 Log.Logger.Information("MoooCart API just started ......");
 
-// 2. Add controllers and resolve JSON infinite cycle issues
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
@@ -29,7 +27,6 @@ builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddScoped<ICartService, CartServices>();
 builder.Services.AddScoped<ICart, CartRepo>();
 
-// 3. Add Swagger for API testing and documentation
 builder.Services.AddEndpointsApiExplorer();
 
 
@@ -64,11 +61,9 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// 4. Inject database and business logic services
 builder.Services.AddInjectionOptionsDB(builder.Configuration);
 builder.Services.AddInjectionOptions();
 
-// (Blazor CORS settings have been removed as this is now a pure API)
 
 try
 {
@@ -78,7 +73,6 @@ try
 
     app.AddMiddleWareDb();
 
-    // 5. Configure Development environment settings
     //if (app.Environment.IsDevelopment())
     //{
         app.UseSwagger();
