@@ -117,4 +117,3 @@ Through building this backend from scratch, the following implementation strateg
 <img width="1846" height="804" alt="image" src="https://github.com/user-attachments/assets/a644f287-199e-4dd6-ad69-0f1ad0fb33fd" />
 <img width="1845" height="556" alt="image" src="https://github.com/user-attachments/assets/7b1a5318-7cfe-45d9-8f44-8430127811e8" />
 <img width="1841" height="758" alt="image" src="https://github.com/user-attachments/assets/c785e10c-6581-4350-917b-aba7bf6a88cc" />
-
