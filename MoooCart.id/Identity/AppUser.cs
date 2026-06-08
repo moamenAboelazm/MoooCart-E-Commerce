@@ -13,8 +13,5 @@ namespace MoooCart.id.Identity
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime LastLogin { get; set; }
         public bool IsActive { get; set; } = true;
-
-        // Navigation Props for orders and Addresses and Reviews
-
     }
 }
